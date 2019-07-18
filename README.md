@@ -1,10 +1,10 @@
 # tcp_udp
 add tcp&udp coding
 ## 传输层中的TCP和UDP
-### 端口号<br>
-    传输层协议利用端口号识别本机中正在通信的应用程序，并准确将数据传输。<br>
-    ![](https://github.com/sjtujw/tcp_udp/raw/master/img/duankou.jpg)
-### TCP<br>
+### 端口号
+传输层协议利用端口号识别本机中正在通信的应用程序，并准确将数据传输。<br>
+![](https://github.com/sjtujw/tcp_udp/raw/master/img/duankou.jpg)
+### TCP
 * 三次握手<br>
 ![](https://github.com/sjtujw/tcp_udp/raw/master/img/shakehands3.jpg)
 * 四次握手<br>
