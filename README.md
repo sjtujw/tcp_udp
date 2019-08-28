@@ -11,7 +11,11 @@ add tcp&udp coding
 ![](https://github.com/sjtujw/tcp_udp/raw/master/img/shakehands4.jpg)
 * 通过序列号与确认应答提高可靠性
 ![](https://github.com/sjtujw/tcp_udp/raw/master/img/ack.jpg)
-* 重发超时的确定（公式待补充）
+* 重发超时的确定（公式待补充）<br>
+1. 平滑的往返时间：SRTT = alpha * SRTT +(1-alpha)*R，alpha 一般取7/8。R是这次确认花费的时间。
+2. 往返时间变化：<br>
+RTTVAR = beta * RTTVAR + (1-beta)|SRTT-R|，beta取3/4。<br>
+重传超时值：RTO = SRTT + 4 * RTTVAR
 * 以段为单位发送数据<br>
 最大消息长度（MSS），以MSS的大小将数据进行分割发送。进行重发时也是以MSS为单位。MSS在三次握手时，在两端主机之间被计算得出。两端的主机在发出建立连接的请求时，会在 TCP 首部中写入 MSS 选项，告诉对方自己的接口能够适应的 MSS 的大小。然后会在两者之间选择一个较小的值投入使用。
 * 利用窗口控制提高速度
