@@ -1,6 +1,8 @@
 # tcp_udp
 add tcp&udp coding
 ## 传输层中的TCP和UDP
+### TCP 对应的应用层协议有：FTP,Telnet,SMTP,POP3,HTTP
+### UDP 对应的应用层协议有：DNS,SNMP,TFTP
 ### 端口号
 传输层协议利用端口号识别本机中正在通信的应用程序，并准确将数据传输。<br>
 ![](https://github.com/sjtujw/tcp_udp/raw/master/img/duankou.jpg)
@@ -30,7 +32,7 @@ RTTVAR = beta * RTTVAR + (1-beta)|SRTT-R|，beta取3/4。<br>
     - 某个报文段丢失的情况。
 ![](https://github.com/sjtujw/tcp_udp/raw/master/img/retransmit.jpg)
 ## 网络层中的IP协议
-### IP地址
+### IP地址(32bit)
 * 网络和主机两部分标识
 * IP地址四种分类（A（0-127）、B（128-191）、C（192-223）、D（224-239））
 * 主机地址的部分全部设置为1，就成了广播地址；分为本地广播（本网络内）和直接广播（不同网络之间）。
@@ -39,3 +41,20 @@ RTTVAR = beta * RTTVAR + (1-beta)|SRTT-R|，beta取3/4。<br>
 ### 路由
 ### IPV6
 * IPv6（IP version 6）是为了根本解决 IPv4 地址耗尽的问题而被标准化的网际协议。IPv4 的地址长度为 4 个 8 位字节，即 32 比特。而 IPv6 的地址长度则是原来的 4 倍，即 128 比特，一般写成 8 个 16 位字节。
+#### 常见状态码及原因短语<br>
+HTTP请求结构：请求方式+请求URL+协议及版本<br>
+HTTP响应结构：状态码+原因短语+协议及版本<br>
+* 1xx：请求处理中，请求已被接受，正在处理
+* 2xx：请求成功，请求被成功处理<br>
+200 OK
+* 3xx：重定向，要完成请求必须进行进一步处理<br>
+301：永久性转移<br>
+302：暂时性转移<br>
+304：已缓存<br>
+* 4xx：客户端错误，请求不合法<br>
+400：Bad Request，请求有语法错误<br>
+403：拒绝请求<br>
+404：客户端所访问的页面不存在<br>
+* 5xx：服务器端错误，服务器不能处理合法请求<br>
+500：服务器内部错误<br>
+503：服务不可用，请稍等<br>
